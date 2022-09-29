@@ -1,0 +1,183 @@
+body {
+  margin: 0;
+
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0px;
+  grid-auto-rows: 100vmax;
+  
+}
+.left-column {
+  grid-column: 1 / 3;
+  grid-row: 1;
+  background-color: whitesmoke;
+  height: 100vmax;
+}
+.center-column {
+  grid-column: 2 / 3;
+  grid-row: 1;
+  background-color: white;
+  padding-top: 2%;
+  
+}
+.right-column {
+  grid-column: 3 / 3;
+  grid-row: 1;
+  background-color: whitesmoke;
+}
+.imageright  {
+  float: right;    
+   margin: 0 0 0 15px;
+   padding:10px;
+  }
+.pgutter{
+  margin: 2%;
+  
+}
+.test1 {
+  background-color: white;
+}
+.test2 {
+  background-color: white;
+}
+.reviewdiv{
+  width: 60%;
+  margin: auto;
+  background-color: white;
+  margin-top: 2%;;
+}
+.imagereview{
+  max-width:100%;
+  max-height:95%;
+  min-width:100%;
+  min-height:95%;
+  
+}
+.rowtitle{
+  font-family:    Goudy Old Style;
+  font-size: 50px;
+  font-weight:    bold;
+  background-color: white;
+  
+}
+.rowband{
+  font-family:    Goudy Old Style;
+  font-size: 50px;
+  font-weight:    bold;
+  background-color: white;
+  
+}
+.rowlabel{
+  font-family:    Goudy Old Style;
+  font-size: 50px;
+  font-weight:    bold;
+  background-color: white;
+  
+}
+
+.ratingdiv,rowrating{
+  font-family:    Goudy Old Style;
+  font-size: 25px;
+  font-weight:    bold;
+  background-color: whitesmoke;
+}
+.ratingnormal{
+  opacity: 1;
+}
+.ratingfaded{
+  opacity: 0.1;
+}
+.rowtracka,.rowtrackb{
+  font-family:    Goudy Old Style;
+  font-size: 22px;
+  font-weight:    bold;
+}
+.rowsongkey{
+  font-family:    Goudy Old Style;
+  font-size: 22px;
+  font-weight:    bold;
+  background-color: whitesmoke;
+}
+.rowuserreviewsheader{
+  font-family:    Goudy Old Style;
+  font-size: 22px;
+  font-weight:    bold;
+  background-color: white;
+}
+.rowuserreviewseven{
+  font-family:    Goudy Old Style;
+  font-size: 22px;
+  font-weight:    bold;
+  background-color: whitesmoke;
+}
+.rowuserreviewsodd{
+  font-family:    Goudy Old Style;
+  font-size: 22px;
+  font-weight:    bold;
+  background-color: white;
+}
+.reviewnotfound{
+text-align: center;
+}
+.pcenter{
+  text-align: center;
+  
+}
+.logindiv{
+  width: 30%;
+  margin: auto;
+  background-color: white;
+  margin-top: 2%;
+  border-style:solid;
+  border-color: whitesmoke;
+  padding: 2%;
+}
+.adminmain{
+  margin: auto;
+  width: 75%;
+  text-align: center;
+  
+}
+.testedit {
+  background-color: white;
+  width:100%;
+}
+.row1edit{
+  width: 100%;
+  margin: auto;
+  background-color: blue;
+  margin-top: 2%;
+}
+
+.outerinput {
+  width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+h5{
+  background-color: whitesmoke;
+}
+.pcenterbutton{
+  text-align: center;
+  width: 100%;
+}
+.pcenterbuttonmessage{
+  text-align: center;
+  width: 100%;
+}
+.approvalsdiv{
+  width: 75%;
+  margin: auto;
+  background-color: white;
+  margin-top: 2%;;
+}
+.footer1{
+  width: 100%;
+  text-align: center;
+  
+}
+
+
+

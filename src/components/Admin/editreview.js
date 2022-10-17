@@ -8,7 +8,6 @@ export default function EditReview() {
   const [currentreview, setCurrentReview] = useState([]);
   const [sideatracks, setSideATracks] = useState([]);
   const [sidebtracks, setSideBTracks] = useState([]);
-  const [reviewcomments, setReviewComments] = useState([]);
   const [isOpen, setIsOpen] = React.useState(false);
   const location = useLocation();
   const [inputs, setInputs] = useState({});
@@ -34,7 +33,7 @@ export default function EditReview() {
           setInputs(values => ({...values, "tracktitle" : currenttrack}))
           setInputs(values => ({...values, "trackrating" : currentreview.albumsidearatings[snum]}))
         }else{
-          const currenttrack = null;
+          //const currenttrack = null;
           setInputs(values => ({...values, "tracknumber" : sideatracks.length+1}))
           setInputs(values => ({...values, "tracktitle" : ""}))
           setInputs(values => ({...values, "trackrating" : 1}))
@@ -49,7 +48,7 @@ export default function EditReview() {
           setInputs(values => ({...values, "tracktitle" : currenttrack}))
           setInputs(values => ({...values, "trackrating" : currentreview.albumsidebratings[snum]}))
         }else{
-          const currenttrack = null;
+          //const currenttrack = null;
           setInputs(values => ({...values, "tracknumber" : sidebtracks.length+1}))
           setInputs(values => ({...values, "tracktitle" : ""}))
           setInputs(values => ({...values, "trackrating" : 1}))
@@ -121,25 +120,25 @@ export default function EditReview() {
   }
   const saveReview = async()=>{
     const data = {};
-    if(inputs.txttitle != undefined){
+    if(inputs.txttitle !== undefined){
       data["albumtitle"] = inputs.txttitle;
     }
-    if(inputs.txtalbumcover != undefined){
+    if(inputs.txtalbumcover !== undefined){
       data["albumcover"] = inputs.txtalbumcover;
     }
-    if(inputs.txtalbumlabel != undefined){
+    if(inputs.txtalbumlabel !== undefined){
       data["albumlabel"] = inputs.txtalbumlabel;
     }
-    if(inputs.txtalbumyear != undefined){
+    if(inputs.txtalbumyear !== undefined){
       data["albumyear"] = inputs.txtalbumyear;
     }
-    if(inputs.txtbandname != undefined){
+    if(inputs.txtbandname !== undefined){
       data["bandname"] = inputs.txtbandname;
     }
-    if(inputs.selrating != undefined){
+    if(inputs.selrating !== undefined){
       data["albumrating"] = inputs.selrating;
     }
-    if(inputs.txtalbumcomments != undefined){
+    if(inputs.txtalbumcomments !== undefined){
       data["albumreview"] = inputs.txtalbumcomments;
     }
     if(sideatracks.length > 0){
@@ -167,9 +166,9 @@ export default function EditReview() {
   useEffect(() => {
   
   const getReview = async()=>{
-      
+        const testing = location.state.reviewid;
       //const query = await db.collection('crdata').where('albumkey', '==', location.state.reviewid).get();
-      const query = await db.collection('crdata').where('albumkey', '==', location.state.reviewid).get();
+      const query = await db.collection('crdata').where('albumkey', '==', testing).get();
       if (!query.empty) {
         const snapshot = query.docs[0];
         const data = snapshot.data();
@@ -180,17 +179,7 @@ export default function EditReview() {
       }else{
       }
     }
-    const getComments = async()=>{
-      const q = db.collection('crdataother').where('albumkey', '==', location.state.reviewid).where('approved', '==', true).orderBy("dateentered","desc");
-      //const q = db.collection('crdataother').where('albumkey', '==', location.state.reviewid);
-      if (!q.empty) {
-        
-        const querySnapshot = await getDocs(q);
-        const newUserDataArray = querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
-        //setReviewComments(newUserDataArray);
-      }else{
-      }
-    }
+    
     getReview();
     //getComments();
   }, []);

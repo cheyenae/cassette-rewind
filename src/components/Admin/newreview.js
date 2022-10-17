@@ -1,16 +1,14 @@
 import React,{ useState } from "react";
 import {db} from '../../firebase';
-import { useLocation } from 'react-router-dom';
 import { FaAtom,FaQuestion,FaTrash } from 'react-icons/fa';
 import { collection, addDoc,doc,updateDoc } from "firebase/firestore";
 import Modal from "react-bootstrap/Modal";
-import ModalBody from "react-bootstrap/ModalBody";
 import firebaseAdmin from 'firebase/compat/app';
 export default function NewReview() {
   const [sideatracks, setSideATracks] = useState([]);
   const [sidebtracks, setSideBTracks] = useState([]);
-  const [sideatracksratings, setSideATracksRatings] = useState([]);
-  const [sidebtracksratings, setSideBTracksRatings] = useState([]);
+  let [sideatracksratings] = useState([]);
+  let [sidebtracksratings] = useState([]);
   const [isOpen, setIsOpen] = React.useState(false);
   const [inputs, setInputs] = useState({});
   const [currentside,setCurrentSide] = useState([]);
@@ -36,7 +34,6 @@ export default function NewReview() {
           setInputs(values => ({...values, "tracktitle" : currenttrack}))
           setInputs(values => ({...values, "trackrating" : sideatracksratings[snum]}))
         }else{
-          const currenttrack = null;
           setInputs(values => ({...values, "tracknumber" : sideatracks.length+1}))
           setInputs(values => ({...values, "tracktitle" : ""}))
           setInputs(values => ({...values, "trackrating" : 1}))
@@ -51,7 +48,6 @@ export default function NewReview() {
           setInputs(values => ({...values, "tracktitle" : currenttrack}))
           setInputs(values => ({...values, "trackrating" : sidebtracksratings[snum]}))
         }else{
-          const currenttrack = null;
           setInputs(values => ({...values, "tracknumber" : sidebtracks.length+1}))
           setInputs(values => ({...values, "tracktitle" : ""}))
           setInputs(values => ({...values, "trackrating" : 1}))
@@ -137,25 +133,25 @@ export default function NewReview() {
 
   const saveReview = async()=>{
     const data = {};
-    if(inputs.txttitle != undefined){
+    if(inputs.txttitle !== undefined){
       data["albumtitle"] = inputs.txttitle;
     }
-    if(inputs.txtalbumcover != undefined){
+    if(inputs.txtalbumcover !== undefined){
       data["albumcover"] = inputs.txtalbumcover;
     }
-    if(inputs.txtalbumlabel != undefined){
+    if(inputs.txtalbumlabel !== undefined){
       data["albumlabel"] = inputs.txtalbumlabel;
     }
-    if(inputs.txtalbumyear != undefined){
+    if(inputs.txtalbumyear !== undefined){
       data["albumyear"] = inputs.txtalbumyear;
     }
-    if(inputs.txtbandname != undefined){
+    if(inputs.txtbandname !== undefined){
       data["bandname"] = inputs.txtbandname;
     }
-    if(inputs.selrating != undefined){
+    if(inputs.selrating !== undefined){
       data["albumrating"] = inputs.selrating;
     }
-    if(inputs.txtalbumcomments != undefined){
+    if(inputs.txtalbumcomments !== undefined){
       data["albumreview"] = inputs.txtalbumcomments;
     }
     if(sideatracks.length > 0){

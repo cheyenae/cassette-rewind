@@ -44,7 +44,7 @@ export default function AdminList() {
   
     return(
           <tr key={cass.albumkey}>
-            <td><img width='75' height='75' src={cass.albumcover}/></td>
+            <td><img width='75' height='75' src={cass.albumcover} alt=""/></td>
             <td>{cass.bandname}</td>
             <td>{cass.albumtitle}</td>
             <td>

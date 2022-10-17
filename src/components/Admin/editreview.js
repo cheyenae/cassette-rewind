@@ -2,7 +2,7 @@ import React,{ useState, useEffect } from "react";
 import {db} from '../../firebase';
 import { useLocation } from 'react-router-dom';
 import { FaAtom,FaQuestion,FaTrash } from 'react-icons/fa';
-import {  getDocs,updateDoc,doc } from "firebase/firestore";
+import {  updateDoc,doc } from "firebase/firestore";
 import Modal from "react-bootstrap/Modal";
 export default function EditReview() {
   const [currentreview, setCurrentReview] = useState([]);
@@ -182,7 +182,7 @@ export default function EditReview() {
     
     getReview();
     //getComments();
-  }, []);
+  }, [location.state.reviewid]);
 
   
   if ((currentreview.albumcover) === undefined) {
@@ -237,11 +237,11 @@ export default function EditReview() {
     </div>
     <div class="row6 col-7">
         <select name="selrating" class="outerinput" onChange={handleChange}>
-            <option value="1" selected= {currentreview.albumrating == 1 ? "selected":""}>1 STAR</option>
-            <option value="2"  selected= {currentreview.albumrating == 2 ? "selected":""}>2 STAR</option>
-            <option value="3"  selected= {currentreview.albumrating == 3 ? "selected":""}>3 STAR</option>
-            <option value="4"  selected= {currentreview.albumrating == 4 ? "selected":""}>4 STAR</option>
-            <option value="5"  selected= {currentreview.albumrating == 5 ? "selected":""}>5 STAR</option>
+            <option value="1" selected= {currentreview.albumrating === "1" ? "selected":""}>1 STAR</option>
+            <option value="2"  selected= {currentreview.albumrating === "2" ? "selected":""}>2 STAR</option>
+            <option value="3"  selected= {currentreview.albumrating === "3" ? "selected":""}>3 STAR</option>
+            <option value="4"  selected= {currentreview.albumrating === "4" ? "selected":""}>4 STAR</option>
+            <option value="5"  selected= {currentreview.albumrating === "5" ? "selected":""}>5 STAR</option>
         </select>
     </div>
     </div>

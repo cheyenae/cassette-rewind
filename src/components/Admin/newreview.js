@@ -2,9 +2,10 @@ import React,{ useState } from "react";
 import {db} from '../../firebase';
 import { useLocation } from 'react-router-dom';
 import { FaAtom,FaQuestion,FaTrash } from 'react-icons/fa';
-import { collection, addDoc,doc } from "firebase/firestore";
+import { collection, addDoc,doc,updateDoc } from "firebase/firestore";
 import Modal from "react-bootstrap/Modal";
 import ModalBody from "react-bootstrap/ModalBody";
+import firebaseAdmin from 'firebase/compat/app';
 export default function NewReview() {
   const [sideatracks, setSideATracks] = useState([]);
   const [sidebtracks, setSideBTracks] = useState([]);
@@ -16,6 +17,8 @@ export default function NewReview() {
   const [currenttracknumber,setCurrentTrackNumber] = useState([]);
   const [addedit, setAddEdit] = useState(["add"]);
   const [itemdeleted, setItemDeleted] = useState(false);
+  let albumkey= -1
+  let albumkeydocid=''
   function getTrackNumber(keynum){
     return ++keynum;
   }
@@ -118,6 +121,20 @@ export default function NewReview() {
     hideModal();
     
   }
+  function updateNextKey(){
+    const data = {};
+    const docRef = doc(db, "crkeys",albumkeydocid)
+    
+    data["albumkey"] = ++albumkey;
+    updateDoc(docRef,data
+    ).then(() =>{
+        
+    }).catch((error) =>{
+      alert("testing" + error)
+    })
+    ;
+  }
+
   const saveReview = async()=>{
     const data = {};
     if(inputs.txttitle != undefined){
@@ -149,6 +166,14 @@ export default function NewReview() {
       data["albumsideb"] = sidebtracks;
       data["albumsidebratings"] = sidebtracksratings
     }
+    data["reviewdate"] = firebaseAdmin.firestore.FieldValue.serverTimestamp();
+
+    const query = await db.collection('crkeys').get();
+    const snapshot = query.docs[0];
+    const data2 = snapshot.data();
+    albumkeydocid = snapshot.id
+    albumkey = data2.albumkey
+    data["albumkey"] = albumkey
     //const docRef = doc(db, "crdata", docid);
     //await updateDoc(docRef,data
     await addDoc(collection(db, "crdata"), data
@@ -156,7 +181,10 @@ export default function NewReview() {
         const spane = document.getElementById('spansuccess');
         spane.textContent ="REVIEW ADDED";
         spane.hidden=false;
+        //update key field by one
+        updateNextKey()
     }).catch((error) =>{
+      alert(error)
       const spane = document.getElementById('spansuccess');
       spane.textContent ="Error adding review.  Please try again later";
       spane.hidden=false;

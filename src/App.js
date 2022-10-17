@@ -79,7 +79,7 @@ function App() {
     <br /><br /><br />
     <div class="footer1 text-center p-4 bg-secondary text-white">
       © 2022 Copyright:&nbsp;
-          <a class="text-reset fw-bold" href="">KayDylMad Software</a>
+          <a class="text-reset fw-bold" href="https://www.linkedin.com/in/rodney-batten-ab7a67244/">KayDylMad Software</a>
       </div>
 
   

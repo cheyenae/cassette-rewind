@@ -2,6 +2,7 @@
   "name": "cassette-rewind",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://cassrewind-rdbatten-yahoocom.vercel.app",
   "dependencies": {
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@react-query-firebase/database": "^1.0.0-dev.2",

@@ -16,9 +16,7 @@ export default function Login() {
   });
   
   let isLoggedIn = myContext.valueIsLoggedIn;
-  const logout= () => {
-    myContext.toggleIsLoggedIn(false);
-  }
+
   const login= () => {
     //myContext.toggleIsLoggedIn(true);
     checkLogin(inputs.usernametxt,inputs.passwordtxt);
@@ -30,7 +28,7 @@ export default function Login() {
    db.collection("crusers").where("username", "==", usernamevalue).get()
    .then((querySnapshot) => {
        querySnapshot.forEach((doc) => {
-           if(doc.data().password == passwordvalue){
+           if(doc.data().password === passwordvalue){
             myContext.toggleIsLoggedIn(true);
            }else{
             myContext.toggleIsLoggedIn(false);

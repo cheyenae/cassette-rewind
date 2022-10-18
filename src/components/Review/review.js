@@ -80,7 +80,8 @@ export default function Review() {
       }
     }
     const getComments = async()=>{
-      const q = db.collection('crdataother').where('albumkey', '==', location.state.reviewid).where('approved', '==', "true").orderBy("dateentered","desc");
+      let test = location.state.reviewid
+      const q = db.collection('crdataother').where('albumkey', '==', test).where('approved', '==', "true").orderBy("dateentered","desc");
       //const q = db.collection('crdataother').where('albumkey', '==', location.state.reviewid);
       if (!q.empty) {
         
@@ -92,7 +93,7 @@ export default function Review() {
     }
     getReview();
     getComments();
-  }, []);
+  }, [location.state.reviewid]);
 
   
   if ((currentreview.albumcover) === undefined) {
@@ -213,8 +214,8 @@ export default function Review() {
         <div class="rowuserreviewsodd row">
         <div class="col-5">{cass.username} ({cass.userlocation})</div>
         <div class="col-2">
-        {cass.userrating == 1 ? (<span><FaStar/></span>) : cass.userrating == 2 ? (<span><FaStar/><FaStar/></span>) :
-         cass.userrating == 3 ? (<span><FaStar/><FaStar/><FaStar/></span>) : cass.userrating == 4 ? (<span><FaStar/><FaStar/><FaStar/><FaStar/></span>) :
+        {Number(cass.userrating) === 1 ? (<span><FaStar/></span>) : Number(cass.userrating) === 2 ? (<span><FaStar/><FaStar/></span>) :
+         Number(cass.userrating) === 3 ? (<span><FaStar/><FaStar/><FaStar/></span>) : Number(cass.userrating) === 4 ? (<span><FaStar/><FaStar/><FaStar/><FaStar/></span>) :
          (<span><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></span>)}
         </div>
         <div class="col-5">{cass.usercomments}</div>

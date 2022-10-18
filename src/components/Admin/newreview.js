@@ -302,7 +302,7 @@ export default function NewReview() {
           <div className="rowtracka row">
             <div class="col-1"> {getTrackNumber(e)}.</div>
             <div class="col-6"> {sideatracks[e]}</div>
-            <div class="col-2" style={{textAlign: "center"}}> {sideatracksratings[e] == 1 ? (<FaAtom/>) : sideatracksratings[e] == 2 ? (<FaQuestion/>) : (<FaTrash/>)}</div>
+            <div class="col-2" style={{textAlign: "center"}}> {Number(sideatracksratings[e]) === 1 ? (<FaAtom/>) : Number(sideatracksratings[e]) === 2 ? (<FaQuestion/>) : (<FaTrash/>)}</div>
             <div class="col-3" style={{textAlign: "center"}}> <button type="button" class="btn btn-warning me-3 text-nowrap btn-sm"  onClick={() => showModal(e,'a','edit')}>EDIT</button>
             &nbsp;<button type="button" class="btn btn-danger me-3 text-nowrap btn-sm"  onClick={() => deleteTrack('a',e)}>DELETE</button></div>
           </div>)
@@ -355,7 +355,7 @@ export default function NewReview() {
           <div className="rowtracka row">
             <div class="col-1"> {getTrackNumber(e)}.</div>
             <div class="col-6"> {sidebtracks[e]}</div>
-            <div class="col-2" style={{textAlign: "center"}}> {sidebtracksratings[e] == 1 ? (<FaAtom/>) : sidebtracksratings[e] == 2 ? (<FaQuestion/>) : (<FaTrash/>)}</div>
+            <div class="col-2" style={{textAlign: "center"}}> {Number(sidebtracksratings[e]) === 1 ? (<FaAtom/>) : Number(sidebtracksratings[e]) === 2 ? (<FaQuestion/>) : (<FaTrash/>)}</div>
             <div class="col-3" style={{textAlign: "center"}}> 
             <button type="button" class="btn btn-warning me-3 text-nowrap btn-sm"  onClick={() => showModal(e,'b','edit')}>EDIT</button>
             &nbsp;<button type="button" class="btn btn-danger me-3 text-nowrap btn-sm"  onClick={() => deleteTrack('b',e)}>DELETE</button></div>

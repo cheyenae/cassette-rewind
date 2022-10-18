@@ -49,7 +49,7 @@ cassettes && cassettes.map(cass=>{
 
   return(
         <tr key={cass.albumkey}>
-          <td><img width='75' height='75' src={cass.albumcover} alt="NO IMAGE AVAILABLE"/></td>
+          <td><img width='75' height='75' src={cass.albumcover} alt=""/></td>
           <td>{cass.bandname}</td>
           <td>{cass.albumtitle}</td>
           <td><Link to="/reviewdetails" state={{reviewid: cass.albumkey }}><button type="button" class="btn btn-dark">VIEW DETAILS</button></Link></td>

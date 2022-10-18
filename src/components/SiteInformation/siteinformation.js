@@ -3,7 +3,6 @@ import imagelogin from './../../assets/login.PNG';
 import imageadminmain from './../../assets/adminmain.PNG';
 import imageapprovals from './../../assets/approvals.PNG';
 import imageedit from './../../assets/edit.PNG';
-import { Link } from 'react-router-dom';
 import AppContext from "../../AppContext";
 
 export default function SiteInformation() {

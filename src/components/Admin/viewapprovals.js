@@ -7,7 +7,7 @@ export default function ViewApprovals() {
     const [reviewcomments, setReviewComments] = useState([]);
     
     useEffect(() => {
-        getComments();
+      getComments();
     }, []);
     const getComments = async()=>{
         const q = db.collection('crdataother').where('approved', '==', "false").orderBy("dateentered","desc");
@@ -87,8 +87,8 @@ export default function ViewApprovals() {
           <div class="rowuserreviewsodd row">
           <div class="col-3">{cass.username} ({cass.userlocation})</div>
           <div class="col-2">
-          {cass.userrating == 1 ? (<span><FaStar/></span>) : cass.userrating == 2 ? (<span><FaStar/><FaStar/></span>) :
-           cass.userrating == 3 ? (<span><FaStar/><FaStar/><FaStar/></span>) : cass.userrating == 4 ? (<span><FaStar/><FaStar/><FaStar/><FaStar/></span>) :
+          {Number(cass.userrating) === 1 ? (<span><FaStar/></span>) : Number(cass.userrating) === 2 ? (<span><FaStar/><FaStar/></span>) :
+           Number(cass.userrating) === 3 ? (<span><FaStar/><FaStar/><FaStar/></span>) : Number(cass.userrating) === 4 ? (<span><FaStar/><FaStar/><FaStar/><FaStar/></span>) :
            (<span><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></span>)}
           </div>
           <div class="col-4">{cass.usercomments}</div>

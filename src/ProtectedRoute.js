@@ -1,9 +1,10 @@
-import React from "react";
+import React,{useContext} from "react";
 import { Navigate } from "react-router-dom";
-
+import AppContext from "./AppContext";
 function ProtectedRoute({ children }) {
-
-    const isLogin = localStorage.getItem("isLogin");
+    const myContext = useContext(AppContext);
+    //const isLogin = localStorage.getItem("isLogin");
+    let isLogin = myContext.valueIsLoggedIn;
     console.log("Is User Login?", isLogin);
 
     return (

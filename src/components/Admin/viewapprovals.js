@@ -8,19 +8,22 @@ export default function ViewApprovals() {
     
     useEffect(() => {
       const getComments = async()=>{
-        const q = db.collection('crdataother').where('approved', '==', "false").orderBy("dateentered","desc");
+  
+        const q = await db.collection('crdataother').where('approved', '==', "false").orderBy("dateentered","desc");
         //const q = db.collection('crdataother').where('albumkey', '==', location.state.reviewid);
         if (!q.empty) {
           
           const querySnapshot = await getDocs(q);
           const newUserDataArray = querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+          console.log(newUserDataArray)
           setReviewComments(newUserDataArray);
           console.log(reviewcomments);
         }else{
         }
+        
       }
       getComments();
-    }, []);
+    }, [reviewcomments]);
     const getComments2 = async()=>{
         const q = db.collection('crdataother').where('approved', '==', "false").orderBy("dateentered","desc");
         //const q = db.collection('crdataother').where('albumkey', '==', location.state.reviewid);

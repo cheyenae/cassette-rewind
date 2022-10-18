@@ -7,9 +7,21 @@ export default function ViewApprovals() {
     const [reviewcomments, setReviewComments] = useState([]);
     
     useEffect(() => {
+      const getComments = async()=>{
+        const q = db.collection('crdataother').where('approved', '==', "false").orderBy("dateentered","desc");
+        //const q = db.collection('crdataother').where('albumkey', '==', location.state.reviewid);
+        if (!q.empty) {
+          
+          const querySnapshot = await getDocs(q);
+          const newUserDataArray = querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+          setReviewComments(newUserDataArray);
+          console.log(reviewcomments);
+        }else{
+        }
+      }
       getComments();
     }, []);
-    const getComments = async()=>{
+    const getComments2 = async()=>{
         const q = db.collection('crdataother').where('approved', '==', "false").orderBy("dateentered","desc");
         //const q = db.collection('crdataother').where('albumkey', '==', location.state.reviewid);
         if (!q.empty) {
@@ -59,7 +71,7 @@ export default function ViewApprovals() {
         }else{
             rejectComments(rid);
         }
-        getComments();
+        getComments2();
     }
     if ((reviewcomments) === undefined) {
         return(<div class="reviewnotfound"> <br /><br /><h1>Review Not Found</h1></div>);

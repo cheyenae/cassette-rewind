@@ -105,6 +105,7 @@ export default function SiteInformation() {
           <br /><br />
           If you would like to contact me then please send a message through <a class="text-reset fw-bold" href="https://www.linkedin.com/in/rodney-batten-ab7a67244/">LinkedIn</a>
     </p>
+    <br /><br />
       </div>
       </div>
       )

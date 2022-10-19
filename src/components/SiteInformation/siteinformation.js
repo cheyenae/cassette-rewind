@@ -21,7 +21,8 @@ export default function SiteInformation() {
       <div className="d-flex justify-content-start">
       <p className="pgutter">
         This site was created as stated on the main page, as a tribute to a long lost media.  Besides that it was created to increase my skills (React and Bootstrap)
-        and to increase my knowledge in some technologies that were new to me.(Firebase and Visual Studio Code)
+        and to increase my knowledge in some technologies that were new to me.(Firebase and Visual Studio Code)  In addition, I would just like to mention I am not 
+        an artist, I am coder so please forgive the less than flashy graphics.
         <br /><br />
         This site functions using the following main features (other features are used but not as prominent):<br />
           <ul>

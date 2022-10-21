@@ -35,7 +35,7 @@ export default function SiteInformation() {
           <br /><br />
         This site contains a public facing Blog Site which gives the user the following options
           <ul>
-            <li>Options to View Lastest Reviews or the Review List which contains all reviews</li>
+            <li>Options to View Latest Reviews or the Review List which contains all reviews</li>
             <li>New Reviews are added weekly</li>
             <li>Option for a user to add their own review of the cassette.  Name and location are required to add a review.  All reviews will need to be approved
               before they will show live on the site
@@ -43,7 +43,7 @@ export default function SiteInformation() {
           </ul>
           <br /><br />
         In addition to the public facing side, there is an admin portal that is secured by using a protected route custom class.  The login for the admin site is protected
-         by login and password combination that is verfied in the Firebase database.
+         by login and password combination that is verified in the Firebase database.
          <br /><br />
          <div className="imagecenter">
             <img
@@ -78,7 +78,7 @@ export default function SiteInformation() {
           />
           </div>
           <br /><br />
-        Under the Review List, the admin can edit(quite similar to the add screen) an existing review.  On the edit screen, the admin can edit the following SiteInformation
+        Under the Review List, the admin can edit(quite similar to the add screen) an existing review.  On the edit screen, the admin can edit the following 
         <ul>
           <li>Album Cover</li>
           <li>Band and Album Title</li>

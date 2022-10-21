@@ -33,11 +33,11 @@ export default function Home()  {
 
         <div className="d-flex justify-content-start">
         <p className="pgutter">
-        This site is a tribute to the long lost music format, the <b> CASSETTE TAPE</b>.&nbsp;&nbsp;Around since the the sixties, the format's popularity grew in the 
-        seventies and eighties and decline in the ninties with the rise of compact discs.&nbsp;&nbsp;All cassettes featured on this site were orginally purchased in the
+        This site is a tribute to the long lost music format, the <b> CASSETTE TAPE</b>.&nbsp;&nbsp;Around since the sixties, the format's popularity grew in the 
+        seventies and eighties and decline in the nineties with the rise of compact discs.&nbsp;&nbsp;All cassettes featured on this site were originally purchased in the
         eighties.
         <br /> <br />
-        To make the listening of these classic cassettes more authenicated, I have dusted off a sony walkman and vintage eighties headphones.&nbsp;&nbsp;There will be
+        To make the listening of these classic cassettes more authenticate, I have dusted off a sony walkman and vintage eighties headphones.&nbsp;&nbsp;There will be
         no Beats, JBL or Skullcandy used, just a plain pair of headphones that probably were purchased at KMART or Zellers.  See image to the right for example of the 
         classic walman and headphones.
         <br /> <br />
@@ -45,13 +45,13 @@ export default function Home()  {
         includes band, title, label, year of release and an image of the front cover if possible.  &nbsp;&nbsp;In addition, it will list the songs on each side of the cassette .
         Next, &nbsp;it will break the songs up into three categories: 
         <ul>
-        <li>Repeat Worthy: Excellent song worth additional repeat listenings</li>
+        <li>Repeat Worthy: Excellent song worth additional repeat listens</li>
         <li>On the Fence: Need another few listens to determine if it goes up in rating or drops in rating</li>
         <li>Automatic Music Search: If you are lucky enough to have AMS then click the button, &nbsp;if not then hit the fast forward button</li>
         </ul>
         
         Finally, it will give a five star rating for the overall cassette and a few comments.  &nbsp;&nbsp;In addition, there will be a section where comments can be added.  You are required
-        to enter your name,location and comments up to a 500 character limit.  &nbsp;&nbsp;These comments will be reviewed before they are shown on the site.  &nbsp;&nbsp;Once they are deemed appropriate
+        to enter your name, location and comments up to a 500 character limit.  &nbsp;&nbsp;These comments will be reviewed before they are shown on the site.  &nbsp;&nbsp;Once they are deemed appropriate
         they will show on the comments section for that cassette.
         <br /> <br />
         Please remember these reviews are just done for pure love of music and everyone has their right to their own opinions about that music.
